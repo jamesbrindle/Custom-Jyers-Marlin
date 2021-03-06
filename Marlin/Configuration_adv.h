@@ -298,6 +298,8 @@
   #endif
 #endif
 
+#define MEATPACK
+
 /**
  * Automatic Temperature Mode
  *

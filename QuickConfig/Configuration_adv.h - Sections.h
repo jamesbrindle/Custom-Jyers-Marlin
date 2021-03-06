@@ -1,3 +1,5 @@
+#define MEATPACK
+
 /**
  * PWM Fan Scaling
  *
