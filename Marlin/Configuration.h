@@ -736,7 +736,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 76, 82, 400, 100 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -996,7 +996,7 @@
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 15
+#define PROBING_MARGIN 18
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED 10000
@@ -1162,12 +1162,12 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 230
-#define Y_BED_SIZE 230
+#define X_BED_SIZE 226
+#define Y_BED_SIZE 234
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 1
-#define Y_MIN_POS 2
+#define X_MIN_POS 3
+#define Y_MIN_POS -12
 #define Z_MIN_POS 0
 #define X_MAX_POS (X_BED_SIZE + X_MIN_POS)
 #define Y_MAX_POS (Y_BED_SIZE + Y_MIN_POS)
@@ -1617,7 +1617,7 @@
 #define PREHEAT_3_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_4_LABEL       "PETG"
-#define PREHEAT_4_TEMP_HOTEND 230
+#define PREHEAT_4_TEMP_HOTEND 227
 #define PREHEAT_4_TEMP_BED     75
 #define PREHEAT_4_FAN_SPEED   255 // Value from 0 to 255
 
