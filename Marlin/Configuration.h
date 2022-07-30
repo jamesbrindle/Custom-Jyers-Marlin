@@ -493,9 +493,9 @@
     #define DEFAULT_Kd_LIST {  78.81,  78.81 }
   #else
     // Ender 3 v2
-    #define DEFAULT_Kp  28.72
-    #define DEFAULT_Ki   2.62
-    #define DEFAULT_Kd  78.81
+    #define DEFAULT_Kp  24.20
+    #define DEFAULT_Ki   2.05
+    #define DEFAULT_Kd  71.29
   #endif
 #endif // PIDTEMP
 
@@ -533,9 +533,9 @@
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   // Ender 3 V2
-  #define DEFAULT_bedKp 462.10
-  #define DEFAULT_bedKi  85.47
-  #define DEFAULT_bedKd 624.59
+  #define DEFAULT_bedKp 117.34
+  #define DEFAULT_bedKi  21.21
+  #define DEFAULT_bedKd 432.72
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -736,7 +736,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 77, 81, 400, 140 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 140 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -992,11 +992,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET {  -45, -7,- 1.45 }
+#define NOZZLE_TO_PROBE_OFFSET {  -45, -7, -3 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 18
+// #define PROBING_MARGIN 18 // Using the values from configuration.adv.h
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED 10000
@@ -1162,12 +1162,12 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 226
-#define Y_BED_SIZE 234
+#define X_BED_SIZE 230
+#define Y_BED_SIZE 241
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 3
-#define Y_MIN_POS -12
+#define X_MIN_POS 0
+#define Y_MIN_POS -9
 #define Z_MIN_POS 0
 #define X_MAX_POS (X_BED_SIZE + X_MIN_POS)
 #define Y_MAX_POS (Y_BED_SIZE + Y_MIN_POS)
@@ -1488,8 +1488,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (((X_BED_SIZE) / 2) + 1)    // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT (((Y_BED_SIZE) / 2) + 2)    // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT (((X_BED_SIZE) / 2) - 2 )    // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT (((Y_BED_SIZE) / 2) - 2)    // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)
@@ -1608,7 +1608,7 @@
 
 #define PREHEAT_2_LABEL       "PLA"
 #define PREHEAT_2_TEMP_HOTEND 193
-#define PREHEAT_2_TEMP_BED     60
+#define PREHEAT_2_TEMP_BED     70
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_3_LABEL       "ABS"
@@ -1617,8 +1617,8 @@
 #define PREHEAT_3_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_4_LABEL       "PETG"
-#define PREHEAT_4_TEMP_HOTEND 227
-#define PREHEAT_4_TEMP_BED     75
+#define PREHEAT_4_TEMP_HOTEND 230
+#define PREHEAT_4_TEMP_BED     70
 #define PREHEAT_4_FAN_SPEED   255 // Value from 0 to 255
 
 /**
