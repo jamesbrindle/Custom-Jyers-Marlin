@@ -736,7 +736,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 140 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 136 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -999,7 +999,7 @@
 // #define PROBING_MARGIN 18 // Using the values from configuration.adv.h
 
 // X and Y axis travel speed (mm/min) between probes
-#define XY_PROBE_SPEED 10000
+#define XY_PROBE_SPEED (250*60)
 
 // Feedrate (mm/min) for the first approach when double-probing (MULTIPLE_PROBING == 2)
 #define Z_PROBE_SPEED_FAST (8*60)
@@ -1161,18 +1161,17 @@
 
 // @section machine
 
-// The size of the print bed
-#define X_BED_SIZE 230
-#define Y_BED_SIZE 241
+// The size of the printable area
+#define X_BED_SIZE 227
+#define Y_BED_SIZE 239
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
-#define Y_MIN_POS -9
+#define Y_MIN_POS -10
 #define Z_MIN_POS 0
 #define X_MAX_POS (X_BED_SIZE + X_MIN_POS)
 #define Y_MAX_POS (Y_BED_SIZE + Y_MIN_POS)
 #define Z_MAX_POS 240
-
 /**
  * Software Endstops
  *
@@ -1405,7 +1404,7 @@
   //========================= Unified Bed Leveling ============================
   //===========================================================================
 
-  //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
+  // #define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
   #define MESH_INSET 1              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
@@ -1488,8 +1487,8 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (((X_BED_SIZE) / 2) - 2 )    // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT (((Y_BED_SIZE) / 2) - 2)    // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT (((X_BED_SIZE) / 2) - 1 )   // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT (((Y_BED_SIZE) / 2) - 0 )   // Y point for Z homing
 #endif
 
 // Homing speeds (mm/min)
@@ -1608,18 +1607,23 @@
 
 #define PREHEAT_2_LABEL       "PLA"
 #define PREHEAT_2_TEMP_HOTEND 193
-#define PREHEAT_2_TEMP_BED     70
+#define PREHEAT_2_TEMP_BED     60
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
-#define PREHEAT_3_LABEL       "ABS"
-#define PREHEAT_3_TEMP_HOTEND 240
-#define PREHEAT_3_TEMP_BED     75
+#define PREHEAT_3_LABEL       "PLA+"
+#define PREHEAT_3_TEMP_HOTEND 203
+#define PREHEAT_3_TEMP_BED     60
 #define PREHEAT_3_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_4_LABEL       "PETG"
 #define PREHEAT_4_TEMP_HOTEND 230
 #define PREHEAT_4_TEMP_BED     70
 #define PREHEAT_4_FAN_SPEED   255 // Value from 0 to 255
+
+#define PREHEAT_5_LABEL       "ABS"
+#define PREHEAT_5_TEMP_HOTEND 240
+#define PREHEAT_5_TEMP_BED     75
+#define PREHEAT_5_FAN_SPEED   255 // Value from 0 to 255
 
 /**
  * Nozzle Park
