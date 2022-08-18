@@ -1163,14 +1163,14 @@
 
 // The size of the printable area
 #define X_BED_SIZE 227
-#define Y_BED_SIZE 239
+#define Y_BED_SIZE 229
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
 #define Y_MIN_POS -10
 #define Z_MIN_POS 0
-#define X_MAX_POS (X_BED_SIZE + X_MIN_POS)
-#define Y_MAX_POS (Y_BED_SIZE + Y_MIN_POS)
+#define X_MAX_POS X_BED_SIZE
+#define Y_MAX_POS Y_BED_SIZE + 10
 #define Z_MAX_POS 240
 /**
  * Software Endstops
@@ -1487,7 +1487,7 @@
 #define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
-  #define Z_SAFE_HOMING_X_POINT (((X_BED_SIZE) / 2) - 1 )   // X point for Z homing
+  #define Z_SAFE_HOMING_X_POINT (((X_BED_SIZE) / 2) - 2 )   // X point for Z homing
   #define Z_SAFE_HOMING_Y_POINT (((Y_BED_SIZE) / 2) - 0 )   // Y point for Z homing
 #endif
 
