@@ -1606,12 +1606,12 @@
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_2_LABEL       "PLA"
-#define PREHEAT_2_TEMP_HOTEND 193
+#define PREHEAT_2_TEMP_HOTEND 195
 #define PREHEAT_2_TEMP_BED     60
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 #define PREHEAT_3_LABEL       "PLA+"
-#define PREHEAT_3_TEMP_HOTEND 203
+#define PREHEAT_3_TEMP_HOTEND 208
 #define PREHEAT_3_TEMP_BED     60
 #define PREHEAT_3_FAN_SPEED   255 // Value from 0 to 255
 
@@ -1624,6 +1624,11 @@
 #define PREHEAT_5_TEMP_HOTEND 240
 #define PREHEAT_5_TEMP_BED     75
 #define PREHEAT_5_FAN_SPEED   255 // Value from 0 to 255
+
+#define PREHEAT_6_LABEL       "ASA"
+#define PREHEAT_6_TEMP_HOTEND 245
+#define PREHEAT_6_TEMP_BED     85
+#define PREHEAT_6_FAN_SPEED   255 // Value from 0 to 255
 
 /**
  * Nozzle Park
